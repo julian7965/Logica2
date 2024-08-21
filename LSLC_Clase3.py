@@ -34,6 +34,27 @@ class LSLC:
         self.fin = nuevo_nodo #Colocar el nuevo nodo en el puntero fin
         return self.fin
 
+    def EliminarLSLC(self,cabecera,valor_eliminar):
+     if (self.cabecera == None):
+         return
+     if (self.cabecera == valor_eliminar and self.cabecera.siguiente == cabecera):
+         self.cabecera= None
+     self.fin=self.cabecera
+     F=None
+     if self.cabecera.valor== valor_eliminar:
+         while(self.fin.siguiente != self.cabecera):
+             self.fin = self.fin.siguiente
+         self.fin.siguiente = self.cabecera.siguiente
+         self.cabecera.siguiente = self.fin.siguiente
+     while(self.fin.siguiente != self.cabecera and self.fin.siguiente.valor != valor_eliminar):
+         self.fin = self.fin.siguiente
+     if (self.fin.siguiente.valor==valor_eliminar):
+         F=self.fin.siguiente
+         self.fin.siguiente = F.siguiente
+     else:
+         print("Nose encontro el valor")
+     return self.cabecera
+
     def Imprimir(self):
         if self.fin == None:
             print("La LSLC esta vacia")
@@ -58,4 +79,7 @@ Lista.Imprimir()
 Lista.InsertarAlFinal(15)
 Lista.InsertarAlFinal(18)
 Lista.InsertarAlFinal(20)
+Lista.Imprimir()
+
+Lista.EliminarLSLC(Lista.cabecera,18)
 Lista.Imprimir()
