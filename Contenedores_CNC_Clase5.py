@@ -34,6 +34,24 @@ class CNC:
             self.V[:]  = nueva_lista #Actualizar el contenedor
             return self.V
 
+    def EncolarNuevo(self, nuevo_valor): #añadir un nuevo espacio de memoria
+        if self.ColaLlena():
+            longitud_actual= len(self.V)
+            nueva_lista = [None]*(longitud_actual+1) #Solicitar un nuevo espacio de memoria
+                                                     #que por defecto es nulo
+            for i in range(longitud_actual):
+                nueva_lista[i] = self.V[i] #Copia del contenedor
+
+            #Ejemplo
+            #V= [5,7,8,10]
+            #nueva_lista[None None None None None]
+            #nueva_lista[5,7,8,None]
+
+            nueva_lista[longitud_actual] = nuevo_valor #Adicion o encolar el nuevo elemento
+            self.V[:] = nueva_lista
+        else:
+            return self.V
+
     def Visualizar(self):
         if self.ColaVacia():
             print("La cola esta vacia")
@@ -54,10 +72,17 @@ Lista.Encolar(9)
 Lista.Encolar(88) #Solo imprime hasta el 9 por que la cola esta llena
 Lista.Visualizar()
 
+#Pruebas Encolar nuevo
+Lista.EncolarNuevo(88)
+Lista.Visualizar()
+
 #Pruebas Desencolar
 Lista.Desencolar()
 Lista.Visualizar()
 Lista.Desencolar()
 Lista.Visualizar()
+
+
+
 
 
