@@ -31,7 +31,7 @@ class CNC:
             # V=[2,7,5,10]
             # primer_eliminado = 2
             # nueva_lista =[7,5,10] , actualización de las posiciones
-            self.v[:]  = nueva_lista #Actualizar el contenedor
+            self.V[:]  = nueva_lista #Actualizar el contenedor
             return self.V
 
     def Visualizar(self):
@@ -43,6 +43,21 @@ class CNC:
                 Vector.append(x) #append -->apilar o alamacenar cada elemento del contenedor
             print(Vector)
 
-#Pruebas
+#Pruebas Encolar
+n=5
+Lista = CNC(n)
+Lista.Encolar(7)
+Lista.Encolar(10)
+Lista.Encolar(18)
+Lista.Encolar(25)
+Lista.Encolar(9)
+Lista.Encolar(88) #Solo imprime hasta el 9 por que la cola esta llena
+Lista.Visualizar()
+
+#Pruebas Desencolar
+Lista.Desencolar()
+Lista.Visualizar()
+Lista.Desencolar()
+Lista.Visualizar()
 
 
