@@ -1,4 +1,4 @@
-class A2CC:   #SOLO COLAS CIRCULARES
+class A2CC:   #OJO SOLO PARA COLAS CIRCULARES
 
     def __init__(self,n):
         m = n // 2
