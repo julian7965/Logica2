@@ -1,4 +1,4 @@
-class A2CC:   #DOS COLAS CIRCULARES
+class A2CC:   #SOLO COLAS CIRCULARES
 
     def __init__(self,n):
         m = n // 2
@@ -60,6 +60,13 @@ class A2CC:   #DOS COLAS CIRCULARES
 n=10
 Lista = A2CC(n)
 Lista.Encolar_1(5)
-Lista.Encolar_2(6)
 Lista.Encolar_2(10)
+Lista.Encolar_2(7)
+Lista.Encolar_2(99)
+Lista.Encolar_2(100)
+Lista.Encolar_1(220)
+Lista.Encolar_1(880)
+Lista.Encolar_1(22)
+
+
 Lista.Imprimir()
